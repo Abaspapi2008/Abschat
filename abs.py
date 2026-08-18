@@ -4,8 +4,9 @@ from telegram.ext import Application, CommandHandler, CallbackQueryHandler, Mess
 from openai import OpenAI
 
 # ==== تنظیمات ====
-TELEGRAM_TOKEN = "8962690201:AAGlEGtsf51Es9r0zmmQzcyLaMe2uZWQcXE"
-OPENROUTER_KEY = "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"
+import os
+TELEGRAM_TOKEN = os.environ.get("TELEGRAM_TOKEN")
+OPENROUTER_KEY = os.environ.get("OPENROUTER_KEY")
 
 client = OpenAI(
     base_url="https://openrouter.ai/api/v1",
